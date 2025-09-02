@@ -1,154 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Lion's Pub</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css">
+  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lion's Pub - Authentic Sri Lankan Cuisine in Tokyo</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <link href="css/index_style.css" rel="stylesheet">
+  
+  <style>
+  /* About Section */
+.about {
+  padding: 100px 0;
+  background: #b9dded;
+  background: linear-gradient(90deg, rgba(185, 221, 237, 1) 46%, rgba(38, 51, 43, 1) 100%, rgba(168, 163, 126, 1) 62%);
+}
 
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+.video-container {
+  position: relative;
+  width: 50%;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  margin-left: 200px;
+}
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+.video-container video {
+  width: 100%;
+  height: auto;
+  display: block;
+  background-color: #000;
+}
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+/* For 720x1280 vertical video, maintain aspect ratio */
+.video-container {
+  aspect-ratio: 9/16; /* 720:1280 simplified */
+}
 
-  <!-- Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
+/* Fallback for browsers that don't support aspect-ratio */
+@supports not (aspect-ratio: 9/16) {
+  .video-container {
+    padding-top: 177.78%; /* 1280/720 * 100 */
+    position: relative;
+  }
+  
+  .video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
 
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .about {
+    padding: 70px 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .about {
+    padding: 50px 0;
+  }
+  
+  .video-container {
+    margin-bottom: 20px;
+    margin-left: 100px;
+  }
+}
+  </style>
 </head>
 
 <body class="index-page">
 
   <header id="header" class="header fixed-top">
-
     <div class="topbar d-flex align-items-center">
       <div class="container d-flex justify-content-center justify-content-md-between">
         <div class="contact-info d-flex align-items-center">
-          <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:contact@example.com">lionspub257200@gmail.com</a></i>
-          <i class="bi bi-phone d-flex align-items-center ms-4"><span>070 9148 7464</span></i>
+          <i class="fas fa-envelope d-flex align-items-center"><a href="mailto:contact@example.com">lionspub257200@gmail.com</a></i>
+          <i class="fas fa-phone d-flex align-items-center ms-4"><span>070 9148 7464</span></i>
         </div>
-        
-        
         <div class="languages d-none d-md-flex align-items-center">
           <ul>
-            <li></li>
-            <li><a href="#"></a></li>
+            <li><a href="#">EN</a></li>
+            <li><a href="#">JP</a></li>
           </ul>
         </div>
       </div>
-    </div><!-- End Top Bar -->
+    </div>
 
     <div class="branding d-flex align-items-center">
       <div class="container position-relative d-flex align-items-center justify-content-between">
         <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
-          <img src="assets/img/logo.png" alt="">
+          <img src="img/logo.png" alt="Li Logo">
           <h1 class="sitename">Lion's Pub</h1>
         </a>
 
         <nav id="navmenu" class="navmenu">
           <ul>
-            <li><a href="#hero" class="active">Home<br></a></li>
-            <li><a href="menu.html">Menu</a></li>
+            <li><a href="#hero" class="active">Home</a></li>
+            <li><a href="Our_Food_&_Beverage_Collection.html">Menu</a></li>
             <li><a href="#events">Events</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="art-and-photo-collection.html">Gallery</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
-          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+          <i class="mobile-nav-toggle d-xl-none fas fa-bars"></i>
         </nav>
         <a class="btn-book-a-table d-none d-xl-block" href="#contact">Book a Table</a>
       </div>
     </div>
-
   </header>
 
   <main class="main">
-
     <!-- Hero Section -->
     <section id="hero" class="hero section dark-background">
-
-      <img src="assets/img/hero-bg.jpg" alt="" data-aos="fade-in">
-
+      <img src="img/hero-bg.jpg" alt="Restaurant Interior">
       <div class="container">
         <div class="row">
-          <div class="col-lg-8 d-flex flex-column align-items-center align-items-lg-start">
+          <div class="col-lg-8 d-flex flex-column align-items-center align-items-lg-start hero-content">
             <h2 data-aos="fade-up" data-aos-delay="100">Welcome to <span>Lion's Pub</span></h2>
-            <p data-aos="fade-up" data-aos-delay="200" style="color: #ffffff;">Delivering great food!</p>
+            <p data-aos="fade-up" data-aos-delay="200">Authentic Sri Lankan Cuisine in the Heart of Tokyo</p>
             <div class="d-flex mt-4" data-aos="fade-up" data-aos-delay="300">
-              <a href="#menu" class="cta-btn">Our Menu</a>
+              <a href="Our_Food_&_Beverage_Collection.html" class="cta-btn">Our Menu</a>
               <a href="#contact" class="cta-btn">Book a Table</a>
             </div>
           </div>
-          
-          <!--
-          <div class="col-lg-4 d-flex align-items-center justify-content-center mt-5 mt-lg-0">
-            <a href="https://youtu.be/sRk6TI5VsIQ?si=uA8W4GWva9_5BH96" class="glightbox pulsating-play-btn"></a>
-          </div>
-          -->
-
         </div>
       </div>
-
-    </section><!-- /Hero Section -->
+    </section>
 
     <!-- About Section -->
     <section id="about" class="about section">
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row gy-4">
-          <div class="col-lg-6 order-1 order-lg-2">
-            <img src="assets/img/about.jpg" class="img-fluid about-img" alt="">
-          </div>
-          <div class="col-lg-6 order-2 order-lg-1 content">
-            <h3>Delicious SriLankan Restaurant in the heart of Japan (Tokyo)</h3>
-            <p class="fst-italic">
-            Welcome to a true slice of Sri Lanka in the heart of Tokyo. We proudly serve authentic Sri Lankan cuisine, rich in spices, 
-            tradition, and warmth. As one of the few Sri Lankan restaurants in Japan, we also offer select grocery items like curry powders, teas, and spice blends. 
-            Whether you’re craving home-style meals or unique ingredients, we bring you a flavorful island experience you won’t forget.
-            </p>
-            <ul>
-              <li><i class="bi bi-check2-all"></i> <span>Authentic Sri Lankan dishes prepared with traditional recipes</span></li>
-              <li><i class="bi bi-check2-all"></i> <span>Friendly, welcoming atmosphere that feels like home</span></li>
-              <li><i class="bi bi-check2-all"></i> <span>Convenient location in Tokyo with dine-in and takeaway options</span></li>
-              <li><i class="bi bi-check2-all"></i> <span>Specialty items for sale: spices, teas, curry powders, and more</span></li>
-              <li><i class="bi bi-check2-all"></i> <span>One of the few Sri Lankan culinary destinations in Japan</span></li>
-            </ul>
-            <p>
-             
-            </p>
-          </div>
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <div class="row gy-4">
+      <div class="col-lg-6 order-1 order-lg-2">
+        <!-- Video Container -->
+        <div class="video-container mb-4">
+          <video width="100%" height="auto" controls autoplay muted loop>
+            <source src="img/lionspub.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
         </div>
-
       </div>
-
-    </section><!-- /About Section -->
-
-    <!-- Why Us Section -->
-    <section id="why-us" class="why-us section">
+      <div class="col-lg-6 order-2 order-lg-1 content">
+        <h3>Delicious Sri Lankan Restaurant in the heart of Japan (Tokyo)</h3>
+        <p class="fst-italic">
+        Welcome to a true slice of Sri Lanka in the heart of Tokyo. We proudly serve authentic Sri Lankan cuisine, rich in spices, 
+        tradition, and warmth. As one of the few Sri Lankan restaurants in Japan, we also offer select grocery items like curry powders, teas, and spice blends. 
+        Whether you're craving home-style meals or unique ingredients, we bring you a flavorful island experience you won't forget.
+        </p>
+        <ul>
+          <li><i class="fas fa-check-circle"></i> <span>Authentic Sri Lankan dishes prepared with traditional recipes</span></li>
+          <li><i class="fas fa-check-circle"></i> <span>Friendly, welcoming atmosphere that feels like home</span></li>
+          <li><i class="fas fa-check-circle"></i> <span>Convenient location in Tokyo with dine-in and takeaway options</span></li>
+          <li><i class="fas fa-check-circle"></i> <span>Specialty items for sale: spices, teas, curry powders, and more</span></li>
+          <li><i class="fas fa-check-circle"></i> <span>One of the few Sri Lankan culinary destinations in Japan</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
 
     <!-- Specials Section -->
     <section id="specials" class="specials section">
-
-      <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Specials</h2>
         <p>Check Our Specials</p>
-      </div><!-- End Section Title -->
+      </div>
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
-
         <div class="row">
           <div class="col-lg-3">
             <ul class="nav nav-tabs flex-column">
@@ -179,7 +205,7 @@
                       A perfect combination of rich Sri Lankan spices and hearty comfort — ideal for a satisfying meal.</p>
                   </div>
                   <div class="col-lg-4 text-center order-1 order-lg-2">
-                    <img src="assets/img/specials-1.png" alt="" class="img-fluid">
+                    <img src="img/specials-1.png" class="img-fluid">
                   </div>
                 </div>
               </div>
@@ -192,7 +218,7 @@
                       sound and bold, satisfying taste — a true taste of Sri Lanka!</p>
                   </div>
                   <div class="col-lg-4 text-center order-1 order-lg-2">
-                    <img src="assets/img/specials-2.png" alt="" class="img-fluid">
+                    <img src="img/specials-2.png" alt="Kottu" class="img-fluid">
                   </div>
                 </div>
               </div>
@@ -205,7 +231,7 @@
                       enjoyed any time of day.</p>
                   </div>
                   <div class="col-lg-4 text-center order-1 order-lg-2">
-                    <img src="assets/img/specials-3.png" alt="" class="img-fluid">
+                    <img src="img/specials-3.png" alt="Noodles" class="img-fluid">
                   </div>
                 </div>
               </div>
@@ -218,7 +244,7 @@
                       hearty meal perfect for any special occasion.</p>
                   </div>
                   <div class="col-lg-4 text-center order-1 order-lg-2">
-                    <img src="assets/img/specials-4.png" alt="" class="img-fluid">
+                    <img src="img/specials-4.png" alt="Biryani" class="img-fluid">
                   </div>
                 </div>
               </div>
@@ -227,187 +253,164 @@
                   <div class="col-lg-8 details order-2 order-lg-1">
                     <h3>FRIED RICE</h3>
                     <p class="fst-italic">Fried Rice is a flavorful stir-fried rice dish made with basmati rice, vegetables, eggs, and your choice of 
-                      meat or seafood. Cooked with soy sauce and Sri Lankan spices, it’s a delicious fusion of Asian taste with a local twist.</p>
+                      meat or seafood. Cooked with soy sauce and Sri Lankan spices, it's a delicious fusion of Asian taste with a local twist.</p>
                   </div>
                   <div class="col-lg-4 text-center order-1 order-lg-2">
-                    <img src="assets/img/specials-5.png" alt="" class="img-fluid">
+                    <img src="img/specials-5.png" alt="Fried Rice" class="img-fluid">
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-
       </div>
-
-    </section><!-- /Specials Section -->
+    </section>
 
     <!-- Events Section -->
     <section id="events" class="events section">
-
-      <img class="slider-bg" src="assets/img/events-bg.jpg" alt="" data-aos="fade-in">
-
-      <div class="container">
-
-        <div class="swiper init-swiper" data-aos="fade-up" data-aos-delay="100">
-          <script type="application/json" class="swiper-config">
-            {
-              "loop": true,
-              "speed": 600,
-              "autoplay": {
-                "delay": 5000
-              },
-              "slidesPerView": "auto",
-              "pagination": {
-                "el": ".swiper-pagination",
-                "type": "bullets",
-                "clickable": true
-              }
-            }
-          </script>
-          <div class="swiper-wrapper">
-
-            <div class="swiper-slide">
-              <div class="row gy-4 event-item">
-                <div class="col-lg-6">
-                  <img src="assets/img/events-slider/events-slider-1.jpg" class="img-fluid" alt="">
-                </div>
-                <div class="col-lg-6 pt-4 pt-lg-0 content">
-                  <h3>Birthday Parties</h3>
-                  <p class="fst-italic">
-                  Celebrate your special day with us! Whether it’s a fun kids' birthday or a classy adult gathering, our team will 
-                  make it memorable. Enjoy delicious food, custom decorations, and a joyful atmosphere tailored to your style. 
-                  Let us handle everything while you relax and create unforgettable birthday memories with friends and family.
-                  </p>
-                  <ul>
-                    <li><i class="bi bi-check2-circle"></i> <span>Custom birthday decorations and themes</span></li>
-                    <li><i class="bi bi-check2-circle"></i> <span>Special menus for kids and adults</span></li>
-                    <li><i class="bi bi-check2-circle"></i> <span>Friendly staff to manage your entire event</span></li>
-                  </ul>
-                </div>
-              </div>
-            </div><!-- End Slider item -->
-
-            <div class="swiper-slide">
-              <div class="row gy-4 event-item">
-                <div class="col-lg-6">
-                  <img src="assets/img/events-slider/events-slider-2.jpg" class="img-fluid" alt="">
-                </div>
-                <div class="col-lg-6 pt-4 pt-lg-0 content">
-                  <h3>Business Parties</h3>
-                  <p class="fst-italic">
-                  Host your next business meeting, team dinner, or corporate event in style. 
-                  Our venue is ideal for professional gatherings, offering customized menus, private spaces, and reliable service to suit your needs. 
-                  Whether it’s a networking lunch or an evening function, we ensure a seamless and impressive experience for you and your colleagues.
-                  </p>
-                  <ul>
-                    <li><i class="bi bi-check2-circle"></i> <span>Quiet and professional atmosphere</span></li>
-                    <li><i class="bi bi-check2-circle"></i> <span>AV setup and Wi-Fi available on request</span></li>
-                    <li><i class="bi bi-check2-circle"></i> <span>Group dining and corporate menu packages</span></li>
-                  </ul>
-                </div>
-              </div>
-            </div><!-- End Slider item -->
-
-            <div class="swiper-slide">
-              <div class="row gy-4 event-item">
-                <div class="col-lg-6">
-                  <img src="assets/img/events-slider/events-slider-3.jpg" class="img-fluid" alt="">
-                </div>
-                <div class="col-lg-6 pt-4 pt-lg-0 content">
-                  <h3>Private Parties</h3>
-                  <p class="fst-italic">
-                  Looking for a cozy, elegant spot for your private event? Our restaurant offers the 
-                  perfect space for intimate celebrations, reunions, or special dinners. With flexible seating, curated menus, and personalized service, 
-                  we’ll help you create a unique and stress-free experience that your guests will remember. Reserve your private party with us today!
-                  </p>
-                  <ul>
-                    <li><i class="bi bi-check2-circle"></i> <span>Private and comfortable event space</span></li>
-                    <li><i class="bi bi-check2-circle"></i> <span>Tailored menu options to suit your gathering</span></li>
-                    <li><i class="bi bi-check2-circle"></i> <span>Perfect for family celebrations or small groups</span></li>
-                  </ul>
-                </div>
-              </div>
-            </div><!-- End Slider item -->
-
+  <!-- Background image -->
+  <div class="events-bg">
+    <img src="img/events-bg.jpg" alt="Events Background" class="events-bg-img">
+  </div>
+  
+  <div class="container position-relative">
+    <div class="swiper init-swiper" data-aos="fade-up" data-aos-delay="100">
+      <div class="swiper-wrapper">
+        
+        <div class="swiper-slide">
+          <div class="row gy-4 event-item">
+            <div class="col-lg-6">
+              <img src="img/events-slider/events-slider-1.jpg" class="img-fluid event-img" alt="Birthday Party">
+            </div>
+            <div class="col-lg-6 pt-4 pt-lg-0 content">
+              <h3>Birthday Parties</h3>
+              <p class="fst-italic">
+              Celebrate your special day with us! Whether it's a fun kids' birthday or a classy adult gathering, our team will 
+              make it memorable. Enjoy delicious food, custom decorations, and a joyful atmosphere tailored to your style. 
+              Let us handle everything while you relax and create unforgettable birthday memories with friends and family.
+              </p>
+              <ul>
+                <li><i class="fas fa-check-circle"></i> <span>Custom birthday decorations and themes</span></li>
+                <li><i class="fas fa-check-circle"></i> <span>Special menus for kids and adults</span></li>
+                <li><i class="fas fa-check-circle"></i> <span>Friendly staff to manage your entire event</span></li>
+              </ul>
+            </div>
           </div>
-          <div class="swiper-pagination"></div>
         </div>
-
+        
+        <div class="swiper-slide">
+          <div class="row gy-4 event-item">
+            <div class="col-lg-6">
+              <img src="img/events-slider/events-slider-3.jpg" class="img-fluid event-img" alt="Business Meeting">
+            </div>
+            <div class="col-lg-6 pt-4 pt-lg-0 content">
+              <h3>Business Parties</h3>
+              <p class="fst-italic">
+              Host your next business meeting, team dinner, or corporate event in style. 
+              Our venue is ideal for professional gatherings, offering customized menus, private spaces, and reliable service to suit your needs. 
+              Whether it's a networking lunch or an evening function, we ensure a seamless and impressive experience for you and your colleagues.
+              </p>
+              <ul>
+                <li><i class="fas fa-check-circle"></i> <span>Quiet and professional atmosphere</span></li>
+                <li><i class="fas fa-check-circle"></i> <span>AV setup and Wi-Fi available on request</span></li>
+                <li><i class="fas fa-check-circle"></i> <span>Group dining and corporate menu packages</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="swiper-slide">
+          <div class="row gy-4 event-item">
+            <div class="col-lg-6">
+              <img src="img/events-slider/events-slider-2.jpg" class="img-fluid event-img" alt="Private Party">
+            </div>
+            <div class="col-lg-6 pt-4 pt-lg-0 content">
+              <h3>Private Parties</h3>
+              <p class="fst-italic">
+              Looking for a cozy, elegant spot for your private event? Our restaurant offers the 
+              perfect space for intimate celebrations, reunions, or special dinners. With flexible seating, curated menus, and personalized service, 
+              we'll help you create a unique and stress-free experience that your guests will remember. Reserve your private party with us today!
+              </p>
+              <ul>
+                <li><i class="fas fa-check-circle"></i> <span>Private and comfortable event space</span></li>
+                <li><i class="fas fa-check-circle"></i> <span>Tailored menu options to suit your gathering</span></li>
+                <li><i class="fas fa-check-circle"></i> <span>Perfect for family celebrations or small groups</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
       </div>
-
-    </section><!-- /Events Section -->
-
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</section>
 
     <!-- Contact Section -->
     <section id="contact" class="contact section">
-  <!-- Section Title -->
-  <div class="container section-title" data-aos="fade-up">
-    <h2>Contact</h2>
-    <p>Contact Us</p>
-  </div>
-  <!-- End Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2 style="color: white;">Contact Us</h2>
+      </div>
 
-  <div class="container" data-aos="fade-up" data-aos-delay="100">
-    <div class="row gy-4">
-      <!-- Left: Contact Details -->
-      <div class="col-lg-6">
-        <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
-          <i class="bi bi-geo-alt flex-shrink-0"></i>
-          <div>
-            <h3>Location</h3>
-            <p>Tokyo, Japan</p>
-          </div>
-        </div>
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4">
+          <div class="col-lg-6">
+            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+              <i class="fas fa-map-marker-alt flex-shrink-0"></i>
+              <div>
+                <h3>Location</h3>
+                <p>Hirota Building, Higasi Ueno, Tokyo, Japan</p>
+              </div>
+            </div>
 
-        <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
-          <i class="bi bi-clock flex-shrink-0"></i>
-          <div>
-            <h3>Open Hours</h3>
-            <p>Monday to Friday: 11:00 - 14:00 (Lunch Time) 
+            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+              <i class="fas fa-clock flex-shrink-0"></i>
+              <div>
+                <h3>Open Hours</h3>
+                <p>Monday to Friday: 11:00 - 14:00 (Lunch Time) 
                   <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             17:30 - 23:00 (Dinner Time) </p>
-            <br>
-            <p>Saturday:      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <br>
+                <p>Saturday:      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             11:00 - 15:00 (Lunch Time)
                   <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             16:30 - 23:00 (Dinner Time)</p>
-            <br>
-            <p>Sunday:      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <br>
+                <p>Sunday:      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             Holiday </p>
-            
-          </div>
-        </div>
+              </div>
+            </div>
 
-        <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
-          <i class="bi bi-telephone flex-shrink-0"></i>
-          <div>
-            <h3>Call Us</h3>
-            <p>070 9148 7464</p>
-          </div>
-        </div>
+            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+              <i class="fas fa-phone flex-shrink-0"></i>
+              <div>
+                <h3>Call Us</h3>
+                <p>070 9148 7464</p>
+              </div>
+            </div>
 
-        <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="500">
-          <i class="bi bi-envelope flex-shrink-0"></i>
-          <div>
-            <h3>Email Us</h3>
-            <p>lionspub257200@gmail.com</p>
+            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="500">
+              <i class="fas fa-envelope flex-shrink-0"></i>
+              <div>
+                <h3>Email Us</h3>
+                <p>lionspub257200@gmail.com</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="map-container">
+              <iframe style="border:0; width: 100%; height: 100%;" 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d414678.994754057!2d139.17039158906252!3d35.709500199999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188f004f93252d%3A0xcf9fefc50ce449e5!2sLion%E2%80%99s%20Pub%20Sri%20Lankan%20Restaurant%20%26%20Bar!5e0!3m2!1sen!2sjp!4v1753319833002!5m2!1sen!2sjp"
+                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
+            </div>
           </div>
         </div>
       </div>
+    </section>
+  </main>
 
-      <!-- Right: Google Map -->
-      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-        <iframe style="border:10; width: 100%; height: 100%;" 
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d414678.994754057!2d139.17039158906252!3d35.709500199999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188f004f93252d%3A0xcf9fefc50ce449e5!2sLion%E2%80%99s%20Pub%20Sri%20Lankan%20Restaurant%20%26%20Bar!5e0!3m2!1sen!2sjp!4v1753319833002!5m2!1sen!2sjp"
-          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
-      </div>
-    </div>
-      </div>
-        </section>
-        <!-- /Contact Section -->
-      
   <footer id="endfooter" class="endfooter">
     <div class="endcontainer copyright text-center mt-4">
       <p>© <span>Copyright</span> <strong class="px-1 sitename">Lion's Pub</strong> <span>All Rights Reserved</span></p>
@@ -415,23 +418,89 @@
   </footer>
 
   <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="fas fa-arrow-up"></i></a>
 
   <!-- Preloader -->
   <div id="preloader"></div>
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-
-  <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
-
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+  <script>
+    // Header scroll effect
+    window.addEventListener('scroll', function() {
+      const header = document.querySelector('.header');
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+      
+      // Scroll top button
+      const scrollTop = document.getElementById('scroll-top');
+      if (window.scrollY > 300) {
+        scrollTop.classList.add('active');
+      } else {
+        scrollTop.classList.remove('active');
+      }
+    });
+    
+    // Mobile menu toggle
+    const mobileToggle = document.querySelector('.mobile-nav-toggle');
+    const navMenu = document.querySelector('.navmenu');
+    
+    mobileToggle.addEventListener('click', function() {
+      navMenu.classList.toggle('active');
+      this.classList.toggle('fa-bars');
+      this.classList.toggle('fa-times');
+    });
+    
+    // Close mobile menu when clicking a link
+    document.querySelectorAll('.navmenu a').forEach(link => {
+      link.addEventListener('click', function() {
+        navMenu.classList.remove('active');
+        mobileToggle.classList.add('fa-bars');
+        mobileToggle.classList.remove('fa-times');
+      });
+    });
+    
+    // Initialize Swiper
+    const swiper = new Swiper('.init-swiper', {
+      loop: true,
+      speed: 600,
+      autoplay: {
+        delay: 5000,
+      },
+      slidesPerView: 'auto',
+      pagination: {
+        el: '.swiper-pagination',
+        type: 'bullets',
+        clickable: true
+      }
+    });
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          window.scrollTo({
+            top: target.offsetTop - 80,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+    
+    // Scroll top functionality
+    document.getElementById('scroll-top').addEventListener('click', function(e) {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  </script>
 </body>
-
 </html>
