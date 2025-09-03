@@ -90,47 +90,57 @@
     max-width: 100%;
     aspect-ratio: 3/4;
   }
+  
+  
 }
   </style>
 </head>
 
 <body class="index-page">
   <header id="header" class="header fixed-top">
-    <div class="topbar d-flex align-items-center">
-      <div class="container d-flex justify-content-center justify-content-md-between">
-        <div class="contact-info d-flex align-items-center">
-          <i class="fas fa-envelope d-flex align-items-center"><a href="mailto:contact@lionspub.com">lionspub257200@gmail.com</a></i>
-          <i class="fas fa-phone d-flex align-items-center ms-4"><span>070 9148 7464</span></i>
-        </div>
-        <div class="languages d-none d-md-flex align-items-center">
-          <ul>
-            <li><a href="#">EN</a></li>
-            <li><a href="#">JP</a></li>
-          </ul>
-        </div>
+  <!-- Topbar -->
+  <div class="topbar d-flex align-items-center">
+    <div class="container d-flex justify-content-center justify-content-md-between">
+      <div class="contact-info d-flex align-items-center">
+        <i class="fas fa-envelope d-flex align-items-center">
+          <a href="mailto:lionspub257200@gmail.com">lionspub257200@gmail.com</a>
+        </i>
+        <i class="fas fa-phone d-flex align-items-center ms-4">
+          <span>070 9148 7464</span>
+        </i>
+      </div>
+      <div class="languages d-none d-md-flex align-items-center">
+        <ul class="list-unstyled d-flex mb-0">
+          <li><a href="#">EN</a></li>
+          <li><a href="#">JP</a></li>
+        </ul>
       </div>
     </div>
+  </div>
 
-    <div class="branding d-flex align-items-center">
-      <div class="container position-relative d-flex align-items-center justify-content-between">
-        <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
-          <img src="img/logo.png" alt="Lion's Pub Logo">
-          <h1 class="sitename">Lion's Pub</h1>
-        </a>
+  <!-- Branding & Navigation -->
+  <div class="branding d-flex align-items-center">
+    <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between">
+      
+      <!-- Logo -->
+      <a href="index.html" class="logo d-flex align-items-center">
+        <img src="img/logo.png" alt="Lion's Pub Logo" />
+        <h1 class="sitename ms-2">Lion's Pub</h1>
+      </a>
 
-        <nav id="navmenu" class="navmenu">
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="Our_Food_&_Beverage_Collection.html" class="active">Menu</a></li>
-            <li><a href="art-and-photo-collection.html">Gallery</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-          <i class="mobile-nav-toggle d-xl-none fas fa-bars"></i>
-        </nav>
-        <a class="btn-book-a-table d-none d-xl-block" href="#contact">Book a Table</a>
-      </div>
+      <!-- Navigation Menu (Always visible, no toggle) -->
+      <nav id="navmenu" class="navmenu">
+        <ul class="d-flex flex-column flex-md-row list-unstyled mb-0">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="Our_Food_&_Beverage_Collection.html">Menu</a></li>
+          <li><a href="art-and-photo-collection.html">Gallery</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
     </div>
-  </header>
+  </div>
+</header>
 
   <main class="main">
     <!-- Hero Section -->
